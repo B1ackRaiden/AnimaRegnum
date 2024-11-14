@@ -25,13 +25,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.F))
         {
-            GetComponent<Animator>().Play("MCSpriteAttack");
-
             ReadyAttack += Time.deltaTime;
             if(ReadyAttack >= .5f)
             {
                 IsAttacking = true;
                 ReadyAttack = 0;
+                GetComponent<Animator>().Play("MCSpriteAttack");
             }
         }
         else
